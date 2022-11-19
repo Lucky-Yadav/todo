@@ -35,7 +35,10 @@ const Createtask = () => {
           console.log(res, 1);
           setrefresh(true)
       });
-  }
+    }
+    const deleteitem = () => {
+        
+    }
 
   return (
     <div>
@@ -57,7 +60,8 @@ const Createtask = () => {
           <div className="task" key={item.id}>
                 <div className="title"> Title :- {item.title}</div>
                 
-            <div className="status"> status :- {item.status? "true": "false"}</div>
+                <div className="status"> status :- {item.status ? "true" : "false"}</div>
+                <button >delete</button>
           </div>
         ))}
       </div>
