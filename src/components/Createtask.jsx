@@ -5,6 +5,7 @@ const Createtask = () => {
     const [data, setdata] = useState([])
     const [item, setitem] = useState("")
     const [status, setstatus] = useState(false)
+    const [refresh, setrefresh] = useState(false)
     
     const ref = useRef(null);
     
@@ -17,10 +18,10 @@ const Createtask = () => {
         console.log(res.data)
         setdata(res.data)
     });
-    }, [])
+    }, [refresh])
     
     const additem = () => {
-         if (ref.current.checked) {
+         if (!ref.current.checked) {
            setstatus(true)
          } else {
            setstatus(false)
@@ -32,7 +33,7 @@ const Createtask = () => {
         data: itemdata,
       }).then((res) => {
           console.log(res, 1);
-          setdata(...data, res.data)
+          setrefresh(true)
       });
   }
 
@@ -54,8 +55,9 @@ const Createtask = () => {
       <div className="data">
         {data.map((item) => (
           <div className="task" key={item.id}>
-            <div className="title">{item.title}</div>
-            <div className="status">{item.status}</div>
+                <div className="title"> Title :- {item.title}</div>
+                
+            <div className="status"> status :- {item.status? "true": "false"}</div>
           </div>
         ))}
       </div>

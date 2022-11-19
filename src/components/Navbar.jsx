@@ -14,7 +14,6 @@ const Navbar = () => {
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             <div className="left">
               <Link to={"/"}>Home</Link>
-            <Link to={"/cart"}>Cart</Link>
             </div>
             
           </Box>
@@ -22,7 +21,7 @@ const Navbar = () => {
               style={{ cursor: "pointer" }}
               sx={{ flexGrow: 0 }}
             >
-              Logout
+              
             </Box>
         </Toolbar>
       </Container>
