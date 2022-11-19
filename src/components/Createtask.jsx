@@ -36,8 +36,14 @@ const Createtask = () => {
           setrefresh(true)
       });
     }
-    const deleteitem = () => {
-        
+    const deleteitem = (id) => {
+         axios({
+           method: "delete",
+           url: `http://localhost:4000/task/${id}`,
+         }).then((res) => {
+           console.log(res, 1);
+           setrefresh(true);
+         });
     }
 
   return (
@@ -61,7 +67,7 @@ const Createtask = () => {
                 <div className="title"> Title :- {item.title}</div>
                 
                 <div className="status"> status :- {item.status ? "true" : "false"}</div>
-                <button >delete</button>
+                <button onClick={() => deleteitem(item.id)} >delete</button>
           </div>
         ))}
       </div>
