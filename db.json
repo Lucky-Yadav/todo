@@ -4,11 +4,6 @@
       "id": 1,
       "title": "new",
       "status": false
-    },
-    {
-      "title": "Buy Milk",
-      "status": true,
-      "id": 3
     }
   ]
 }
